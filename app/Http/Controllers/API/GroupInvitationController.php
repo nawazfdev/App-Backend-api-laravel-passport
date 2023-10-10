@@ -70,6 +70,8 @@ if($user){
 // $users=User::where('id', $user_id)->first();
 // $user_id1=$users['id'];
         // Retrieve tasks related to the group
+        // $email = DB::table('groups')->find($invitation['id']);
+
         $tasks = Task::where('group_id', $invitation->group_id)->get();
 $groups=Invitation::where('group_id', $invitation->group)->get()->all();
         return response()->json(['tasks' => $tasks],);

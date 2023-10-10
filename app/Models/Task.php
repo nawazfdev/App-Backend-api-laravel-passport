@@ -11,6 +11,10 @@ class Task extends Model
 protected $guarded=[];
     public function group()
     {
-        return $this->belongsTo(Group::class);
+        return $this->hasMany(Group::class);
     }
+    public function tasks()
+{
+    return $this->hasMany(Task::class);
+}
 }

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Group;
 use App\Models\Task;
 use Illuminate\Http\Request;
 
@@ -21,8 +20,6 @@ class TaskController extends Controller
         ]);
 
         // Create a new task.
-        $group = Group::find($request->group_id);
-
         $task = Task::create([
             'start_time' => $request->start_time,
             'task_date' => $request->task_date,

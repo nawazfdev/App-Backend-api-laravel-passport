@@ -14,7 +14,7 @@ class Group extends Model
         'user_id'
     ];
     protected $primaryKey='user_id';
-    public function groups()
+    public function group()
     {
         return $this->hasMany(Group::class);
     }
