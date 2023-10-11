@@ -23,6 +23,12 @@ class RegisterController extends BaseController
      */
     public function register(Request $request)
     {
+        $user = User::where('email', $request->email)->first();
+
+if ($user) {
+    return response()->json(['success' => false, 'msg' => 'User already exists']);
+}
+
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',

@@ -40,6 +40,8 @@ Route::post('login', [RegisterController::class, 'login']);
     Route::post('/groups', [GroupController::class, 'create']);
     Route::post('/tasks', [TaskController::class, 'create']);
 Route::get('/groups/{group_id}/{email}', [GroupInvitationController::class, 'invite']);
+Route::get('/send-whatsapp/{group_id}/{email}', [GroupInvitationController::class, 'sendWhatsAppMessage']);
+
 
 
 });
